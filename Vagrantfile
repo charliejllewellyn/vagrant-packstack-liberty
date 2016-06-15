@@ -20,7 +20,6 @@ Vagrant.configure(2) do |config|
     vb.memory = 4096
   end
   config.vm.synced_folder ".", "/home/vagrant/sync", disabled: true
-  config.vm.provision "file", source: "conf", destination: "/tmp/conf"
   config.vm.provision "shell", path: "configure_openstack.sh"
   
 end
