@@ -2,7 +2,7 @@
 
 box_path="basebox/openstackbase.box"
 # this is obviously enviroment dependant, due to the file size 100s Mb, this box is not under version control
-remote_box_path="//10.1.10.56/share/openstackbase.box"
+remote_box_path="http://vagrant.internal.local/openstack/packstack.box"
 
 if [ ! -f $box_path ] ; then
     echo "trying to copy from remote location $remote_box_path"
