@@ -1,0 +1,23 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+
+  config.vm.define "openstackbase" do |pssjavabase|
+  end
+  
+  config.vm.box = "centos/7"
+  
+  config.vm.provider "virtualbox" do |vb|
+    vb.name = "openstackbase"
+    vb.memory = 4096
+  end
+  
+  config.ssh.insert_key = false
+  
+  #fix for base box
+  config.vm.synced_folder ".", "/home/vagrant/sync", disabled: true
+  
+  config.vm.provision "shell", path: "install_openstack.sh"
+
+end
