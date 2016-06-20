@@ -13,7 +13,7 @@ sudo yum update -y
 
 sudo yum install -y openstack-packstack
 
-packstack --allinone
+packstack --allinone --os-neutron-lbaas-install=y
 
 sudo yum install -y vim mlocate
 
