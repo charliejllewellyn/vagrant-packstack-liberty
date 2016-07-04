@@ -3,7 +3,7 @@
 
 Vagrant.configure(2) do |config|
 
-  config.vm.box = "hashicorp/packstack-liberty"
+  config.vm.box = "charliejllewellyn/openstack-packstack-liberty"
   
   # forward used ports
   config.vm.network "forwarded_port", guest: 80, host: 8080
@@ -20,6 +20,6 @@ Vagrant.configure(2) do |config|
     vm.cpus = 2
   end
   config.vm.synced_folder ".", "/home/vagrant/sync", disabled: true
-  config.vm.provision "shell", path: "configure_openstack.sh"
+  config.vm.provision "shell", path: "scripts/configure_openstack.sh"
   
 end
