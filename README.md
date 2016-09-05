@@ -11,3 +11,34 @@ This is the top level Vagrant file and can be started/deployed using the standar
 ```
 vagrant up
 ```
+
+## Accessing OpenStack
+
+### UI access
+The UI is avaialble on:
+
+http://localhost:8080/dashboard/auth/login/
+
+The credentials will be output after vagrant finishes running.
+
+### API access
+To access the API login to the vagrant box by running:
+
+```
+vagrant ssh
+```
+
+You can then source the admin users details
+
+```
+sudo -i
+source keystonerc_admin
+```
+
+You can now run commands against OpenStack
+
+e.g. list networks
+
+```
+openstack network list
+```
